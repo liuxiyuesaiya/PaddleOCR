@@ -89,7 +89,7 @@ class ArgsParser(ArgumentParser):
     def __init__(self):
         super(ArgsParser, self).__init__(
             formatter_class=RawDescriptionHelpFormatter)
-        self.add_argument("-c", "--config", help="configuration file to use")
+        self.add_argument("-c", "--config", default='../configs/config.yml', help="configuration file to use")
         self.add_argument(
             "-t", "--tag", default="0", help="tag for marking worker")
         self.add_argument(
@@ -99,7 +99,7 @@ class ArgsParser(ArgumentParser):
             default=[],
             help='config options to be overridden')
         self.add_argument(
-            "--style_image", default="examples/style_images/1.jpg", help="tag for marking worker")
+            "--style_image", default="../examples/style_images/1.jpg", help="tag for marking worker")
         self.add_argument(
             "--text_corpus", default="PaddleOCR", help="tag for marking worker")
         self.add_argument(
